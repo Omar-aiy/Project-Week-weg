@@ -4,27 +4,31 @@ import java.awt.*;
 import java.util.Objects;
 
 public class Cirkel {
-    private Point middelpunt;
-    private double straal;
+    private Punt middelPunt;
+    private int radius;
 
-    public Cirkel(Point middelpunt, double straal) {
+    public Cirkel(Punt middelpunt, int straal) {
         if (middelpunt == null) throw new IllegalArgumentException();
         if (straal <= 0) throw new IllegalArgumentException();
         if (straal > Math.min(middelpunt.getX(), middelpunt.getY())) throw new IllegalArgumentException();
-        this.middelpunt = middelpunt;
-        this.straal = straal;
+        this.middelPunt = middelpunt;
+        this.radius = straal;
     }
 
-    public Point getMiddelpunt() {
-        return middelpunt;
+    public Punt getMiddelPunt() {
+        return middelPunt;
     }
 
-    public double getStraal() {
-        return straal;
+    public void setMiddelPunt(Punt middelPunt) {
+        this.middelPunt = middelPunt;
     }
 
-    public double getOppervlakte() {
-        return Math.PI * straal * straal;
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
     }
 
     @Override
@@ -32,7 +36,7 @@ public class Cirkel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cirkel cirkel = (Cirkel) o;
-        return Double.compare(cirkel.straal, straal) == 0 && Objects.equals(middelpunt, cirkel.middelpunt);
+        return Double.compare(cirkel.radius, radius) == 0 && Objects.equals(middelPunt, cirkel.middelPunt);
     }
 
     @Override
