@@ -41,7 +41,7 @@ public class Cirkel {
 
     @Override
     public String toString() {
-        String output = "Cirkel met middelpunt " + getMiddelpunt().toString() + " en straal " + getStraal();
+        String output = "Cirkel met middelpunt " + getMiddelPunt().toString() + " en straal " + getRadius();
         return output;
     }
 }
